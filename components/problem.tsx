@@ -52,12 +52,11 @@ export default function Problem() {
             The Problem
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-3 tracking-tight">
-            Every Missed Call Is a{" "}
-            <span className="text-slate-400">Missed Patient.</span>
+            Your Front Desk Is Costing You More Than You Think
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Dental clinics across Toronto and the GTA are quietly losing revenue,
-            patients, and staff morale — one unanswered phone at a time.
+            While your staff juggles patients, phones, and paperwork — new patients
+            are calling your competitors.
           </p>
         </div>
 

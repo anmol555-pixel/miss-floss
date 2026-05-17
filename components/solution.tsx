@@ -57,15 +57,13 @@ export default function Solution() {
             The Solution
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
-            Meet Miss Floss —{" "}
+            Meet Miss Floss.{" "}
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
-              Your AI Receptionist.
+              Your 24/7 AI Receptionist.
             </span>
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Miss Floss handles your inbound calls with a natural, conversational
-            voice that patients trust — booking, rescheduling, answering questions,
-            and escalating emergencies without missing a beat.
+            Human-sounding. Always available. Books appointments while you sleep.
           </p>
         </div>
 

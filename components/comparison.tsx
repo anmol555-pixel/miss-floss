@@ -66,7 +66,7 @@ export default function Comparison() {
             Comparison
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
-            How Does Miss Floss Compare?
+            Why Clinics Choose Miss Floss
           </h2>
           <p className="text-lg text-slate-500 max-w-xl mx-auto leading-relaxed">
             Other options cover some of the problem. Miss Floss solves all of it.

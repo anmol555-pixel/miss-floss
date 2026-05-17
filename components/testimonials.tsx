@@ -52,9 +52,9 @@ export default function Testimonials() {
             Testimonials
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
-            Trusted by Clinics Across{" "}
+            Dental Clinics{" "}
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
-              the GTA.
+              Love Miss Floss.
             </span>
           </h2>
           <p className="text-lg text-slate-500 max-w-xl mx-auto leading-relaxed">

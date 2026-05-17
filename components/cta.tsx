@@ -27,15 +27,14 @@ export default function CTA() {
             Get Started
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.05] mb-6">
-            Your Next Patient Is{" "}
+            Your Competitors Are Already{" "}
             <span className="bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
-              Calling Right Now.
+              Answering Every Call.
             </span>
           </h2>
           <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-2xl mx-auto">
-            Don&apos;t let them hang up. Book a 20-minute demo and see Miss Floss
-            answer a live call, book an appointment, and send a confirmation — in
-            real time.
+            Join dental clinics across Canada who never miss a patient again. Book
+            your free 30-minute demo today — no commitment required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

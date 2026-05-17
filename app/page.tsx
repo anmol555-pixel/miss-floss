@@ -1,9 +1,10 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
+import TrustBar from "@/components/trust-bar";
 import Problem from "@/components/problem";
 import Solution from "@/components/solution";
-import Features from "@/components/features";
 import HowItWorks from "@/components/how-it-works";
+import Features from "@/components/features";
 import Benefits from "@/components/benefits";
 import Testimonials from "@/components/testimonials";
 import Comparison from "@/components/comparison";
@@ -19,10 +20,11 @@ export default function Home() {
       <FloatingButtons />
       <main>
         <Hero />
+        <TrustBar />
         <Problem />
         <Solution />
-        <Features />
         <HowItWorks />
+        <Features />
         <Benefits />
         <Testimonials />
         <Comparison />

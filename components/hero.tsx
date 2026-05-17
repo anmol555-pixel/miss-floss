@@ -239,7 +239,7 @@ export default function Hero() {
               variants={headlineVariants}
               initial="hidden"
               animate="visible"
-              className="text-4xl sm:text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.1] text-slate-900 mb-6"
+              className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-slate-900 mb-6"
             >
               <span className="block">
                 {["Every", "Missed", "Call"].map((word) => (
@@ -271,8 +271,9 @@ export default function Hero() {
               transition={{ duration: 0.3, delay: 0.3 }}
               className="text-lg text-slate-500 leading-relaxed max-w-lg mb-10"
             >
-              Miss Floss answers every call, books every appointment, and fills
-              your schedule — 24/7. No voicemail. No missed opportunities.
+              The average dental clinic misses 35% of inbound calls. Each missed
+              call is a lost appointment worth $200–$800. Miss Floss answers every
+              call, 24/7.
             </motion.p>
 
             <motion.div

@@ -111,7 +111,7 @@ export default function FAQ() {
             FAQ
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
-            Answers to the Hard Questions.
+            Got Questions? We Have Answers.
           </h2>
           <p className="text-lg text-slate-500 max-w-xl mx-auto leading-relaxed">
             We know switching to AI feels like a big step. Here&apos;s everything

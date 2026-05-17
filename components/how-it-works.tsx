@@ -33,14 +33,13 @@ export default function HowItWorks() {
             How It Works
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
-            Up and Running in{" "}
+            Live In Your Clinic In{" "}
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
               48 Hours.
             </span>
           </h2>
           <p className="text-lg text-slate-500 max-w-xl mx-auto leading-relaxed">
-            No complex migrations. No technical lift from your team.
-            We handle everything.
+            No complex migrations. No technical lift from your team. We handle everything.
           </p>
         </div>
 
