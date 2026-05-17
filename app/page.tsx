@@ -10,11 +10,13 @@ import Comparison from "@/components/comparison";
 import FAQ from "@/components/faq";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
+import FloatingButtons from "@/components/floating-buttons";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <FloatingButtons />
       <main>
         <Hero />
         <Problem />

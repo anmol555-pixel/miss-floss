@@ -39,9 +39,10 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Miss Floss"
-              height={40}
-              width={0}
-              style={{ width: "auto", height: 40 }}
+              height={96}
+              width={240}
+              style={{ width: "auto", height: "48px" }}
+              quality={100}
               priority
             />
           </Link>
