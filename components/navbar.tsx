@@ -28,9 +28,9 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-[0_4px_24px_rgba(15,23,42,0.08)]"
+            ? "bg-white/80 backdrop-blur-md"
             : "bg-white border-b border-slate-100"
         }`}
       >
@@ -47,7 +47,11 @@ export default function Navbar() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <motion.nav
+            animate={{ opacity: scrolled ? 0 : 1 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className={`hidden md:flex items-center gap-8 ${scrolled ? "pointer-events-none" : ""}`}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -57,7 +61,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-          </nav>
+          </motion.nav>
 
           <div className="flex items-center gap-3">
             <a
