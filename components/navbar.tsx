@@ -36,9 +36,9 @@ export default function Navbar() {
         <div className={`max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
           <Link href="/">
             <img
-              src="/logo.png"
+              src="/logo-removebg-preview.png"
               alt="Miss Floss"
-              style={{ height: "64px", width: "auto", display: "block", mixBlendMode: "multiply" }}
+              style={{ height: "64px", width: "auto", display: "block" }}
             />
           </Link>
 
