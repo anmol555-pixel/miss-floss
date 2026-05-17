@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -34,18 +35,15 @@ export default function Navbar() {
         }`}
       >
         <div className={`max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14" : "h-16"}`}>
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-7 h-7 rounded-lg bg-teal-600 flex items-center justify-center shadow-[0_2px_10px_rgba(13,148,136,0.35)] group-hover:shadow-[0_4px_16px_rgba(13,148,136,0.5)] transition-all duration-300">
-              <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
-                <path
-                  d="M12 2C9 2 6.5 4.5 6.5 7.5c0 2.2 1.3 4.1 3.2 5V21h4.6v-8.5c1.9-.9 3.2-2.8 3.2-5C17.5 4.5 15 2 12 2z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <span className="text-lg font-semibold tracking-tight text-slate-900">
-              Miss Floss
-            </span>
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Miss Floss"
+              height={40}
+              width={0}
+              style={{ width: "auto", height: 40 }}
+              priority
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
