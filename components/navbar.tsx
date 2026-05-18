@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -32,13 +31,16 @@ export default function Navbar() {
         }`}
       >
         <div className={`max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
-          <Link href="/">
+          <a
+            href="#"
+            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          >
             <img
               src="/logo-removebg-preview.png"
               alt="Miss Floss"
               style={{ height: "64px", width: "auto", display: "block" }}
             />
-          </Link>
+          </a>
 
           <motion.nav
             animate={{ opacity: scrolled ? 0 : 1 }}
