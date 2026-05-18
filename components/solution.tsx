@@ -1,3 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
 const steps = [
   {
     number: "01",
@@ -52,7 +65,13 @@ export default function Solution() {
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="text-center mb-8"
+        >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             The Solution
           </p>
@@ -65,11 +84,17 @@ export default function Solution() {
           <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Human-sounding. Always available. Books appointments while you sleep.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8"
+        >
           {steps.map((step, i) => (
-            <div key={step.number} className="relative">
+            <motion.div key={step.number} variants={fadeUp} className="relative">
               {i < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-8 left-full w-5 h-px bg-gradient-to-r from-teal-300 to-transparent z-10" />
               )}
@@ -89,11 +114,17 @@ export default function Solution() {
                   {step.desc}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="text-center"
+        >
           <a
             href="https://cal.com/anmol-anand-f7s3pe"
             target="_blank"
@@ -105,7 +136,7 @@ export default function Solution() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

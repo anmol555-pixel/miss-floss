@@ -1,3 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
 const problems = [
   {
     stat: "25%",
@@ -47,7 +60,13 @@ export default function Problem() {
   return (
     <section id="problem" className="relative bg-[#f8fafc] min-h-screen flex flex-col justify-center py-10 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="text-center mb-8"
+        >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             The Problem
           </p>
@@ -58,23 +77,36 @@ export default function Problem() {
             While your staff juggles patients, phones, and paperwork — new patients
             are calling your competitors.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
+        >
           {problems.map((p) => (
-            <div
+            <motion.div
               key={p.title}
+              variants={fadeUp}
               className={`relative group rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md p-6 md:p-7 overflow-hidden transition-all duration-300 border-t-2 ${p.accent}`}
             >
               <p className="text-3xl font-bold text-slate-900 mb-0.5">{p.stat}</p>
               <p className="text-sm text-slate-400 mb-4">{p.statLabel}</p>
               <h3 className="text-base font-semibold text-slate-800 mb-2">{p.title}</h3>
               <p className="text-base text-slate-500 leading-relaxed">{p.desc}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-8 text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="mt-8 text-center"
+        >
           <p className="text-slate-500 text-lg leading-relaxed">
             The average GTA dental clinic loses{" "}
             <span className="text-slate-900 font-semibold">
@@ -82,7 +114,7 @@ export default function Problem() {
             </span>{" "}
             in recoverable revenue from missed calls alone.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

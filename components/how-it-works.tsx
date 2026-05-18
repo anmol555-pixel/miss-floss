@@ -1,3 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
 const steps = [
   {
     number: "01",
@@ -28,7 +41,13 @@ export default function HowItWorks() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-teal-200 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="text-center mb-8"
+        >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             How It Works
           </p>
@@ -41,37 +60,49 @@ export default function HowItWorks() {
           <p className="text-xl text-slate-500 max-w-xl mx-auto leading-relaxed">
             No complex migrations. No technical lift from your team. We handle everything.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="relative grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8"
+        >
           <div className="hidden lg:block absolute top-10 left-[calc(33.33%+20px)] right-[calc(33.33%+20px)] h-px bg-gradient-to-r from-teal-200 via-teal-300 to-teal-200" />
 
-          {steps.map((step) => (
-            <div key={step.number} className="relative flex flex-col">
-              <div className="relative w-20 h-20 mb-8 mx-auto lg:mx-0">
-                <div className="absolute inset-0 rounded-full bg-teal-50 border border-teal-200 shadow-[0_4px_16px_rgba(13,148,136,0.12)]" />
-                <div className="absolute inset-3 rounded-full bg-teal-100 border border-teal-200" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-teal-600">
-                    {step.number}
-                  </span>
+            {steps.map((step) => (
+              <motion.div key={step.number} variants={fadeUp} className="relative flex flex-col">
+                <div className="relative w-20 h-20 mb-8 mx-auto lg:mx-0">
+                  <div className="absolute inset-0 rounded-full bg-teal-50 border border-teal-200 shadow-[0_4px_16px_rgba(13,148,136,0.12)]" />
+                  <div className="absolute inset-3 rounded-full bg-teal-100 border border-teal-200" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-teal-600">
+                      {step.number}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="text-center lg:text-left">
-                <span className="inline-block text-xs font-semibold text-teal-600 tracking-widest uppercase bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full mb-4">
-                  {step.badge}
-                </span>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                <p className="text-base text-slate-500 leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="text-center lg:text-left">
+                  <span className="inline-block text-xs font-semibold text-teal-600 tracking-widest uppercase bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full mb-4">
+                    {step.badge}
+                  </span>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                  <p className="text-base text-slate-500 leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+        </motion.div>
 
-        <div className="mt-8 mx-auto max-w-2xl rounded-2xl border border-teal-200 bg-teal-50 p-8 text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="mt-8 mx-auto max-w-2xl rounded-2xl border border-teal-200 bg-teal-50 p-8 text-center"
+        >
           <p className="text-base text-slate-700 leading-relaxed">
             <span className="text-slate-900 font-semibold">
               No hardware. No training sessions. No disruption.
@@ -79,7 +110,7 @@ export default function HowItWorks() {
             Miss Floss is live in your clinic within two business days — with a
             dedicated account manager guiding every step.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

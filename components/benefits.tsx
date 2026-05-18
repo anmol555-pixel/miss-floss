@@ -1,7 +1,16 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
 
 function CountUp({
   to,
@@ -154,7 +163,13 @@ export default function Benefits() {
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="text-center mb-8"
+        >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             The ROI
           </p>
@@ -164,7 +179,7 @@ export default function Benefits() {
           <p className="text-xl text-slate-500 max-w-xl mx-auto leading-relaxed">
             Real results from clinics that made the switch in Toronto and the GTA.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
           {stats.map((s) => (
@@ -187,7 +202,13 @@ export default function Benefits() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {[
             {
               title: "Never miss a lead",
@@ -202,8 +223,9 @@ export default function Benefits() {
               desc: "Free your team from repetitive phone work. They can focus on creating an exceptional in-clinic experience.",
             },
           ].map((b) => (
-            <div
+            <motion.div
               key={b.title}
+              variants={fadeUp}
               className="flex gap-4 p-6 rounded-2xl border border-slate-200 bg-white shadow-sm"
             >
               <div className="shrink-0 w-5 h-5 mt-0.5 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center">
@@ -221,9 +243,9 @@ export default function Benefits() {
                 <h3 className="text-base font-semibold text-slate-800 mb-1.5">{b.title}</h3>
                 <p className="text-base text-slate-500 leading-relaxed">{b.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

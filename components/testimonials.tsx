@@ -1,3 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
 const testimonials = [
   {
     quote:
@@ -47,7 +60,13 @@ export default function Testimonials() {
       className="relative bg-white min-h-screen flex flex-col justify-center py-10 px-6"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="text-center mb-8"
+        >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             Testimonials
           </p>
@@ -60,12 +79,19 @@ export default function Testimonials() {
           <p className="text-xl text-slate-500 max-w-xl mx-auto leading-relaxed">
             Dental practice owners share what changed after switching to Miss Floss.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6"
+        >
           {testimonials.map((t) => (
-            <div
+            <motion.div
               key={t.name}
+              variants={fadeUp}
               className="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-7 flex flex-col gap-6 hover:shadow-md hover:border-slate-300 transition-all duration-300"
             >
               <svg viewBox="0 0 32 32" fill="none" className="w-7 h-7 text-teal-200 shrink-0">
@@ -93,11 +119,17 @@ export default function Testimonials() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-8 flex items-center justify-center gap-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="mt-8 flex items-center justify-center gap-4"
+        >
           <div className="flex gap-0.5">
             {Array.from({ length: 5 }).map((_, i) => (
               <svg key={i} viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-teal-500">
@@ -109,7 +141,7 @@ export default function Testimonials() {
             <span className="text-slate-900 font-semibold">4.9 / 5</span> from dental
             clinic owners across Toronto &amp; the GTA
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

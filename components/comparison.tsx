@@ -1,3 +1,12 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 const features = [
   "Available 24/7",
   "Books appointments",
@@ -61,7 +70,13 @@ export default function Comparison() {
   return (
     <section className="relative bg-[#f8fafc] min-h-screen flex flex-col justify-center py-10 px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          className="text-center mb-8"
+        >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             Comparison
           </p>
@@ -71,9 +86,15 @@ export default function Comparison() {
           <p className="text-xl text-slate-500 max-w-xl mx-auto leading-relaxed">
             Other options cover some of the problem. Miss Floss solves all of it.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={fadeUp}
+          className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white"
+        >
           <table className="w-full min-w-[640px]">
             <thead>
               <tr className="border-b border-slate-200 bg-slate-50">
@@ -130,7 +151,7 @@ export default function Comparison() {
               ))}
             </tbody>
           </table>
-        </div>
+        </motion.div>
 
         <div className="flex items-center justify-end gap-5 mt-4 px-1">
           <span className="flex items-center gap-1.5 text-sm text-slate-500">

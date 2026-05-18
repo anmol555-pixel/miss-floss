@@ -22,7 +22,12 @@ export default function CTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full border border-teal-300/40 pointer-events-none" />
 
       <div className="relative max-w-3xl mx-auto text-center">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.15 }}
+        >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-6">
             Get Started
           </p>
@@ -109,7 +114,7 @@ export default function CTA() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
