@@ -53,6 +53,10 @@ export const metadata: Metadata = {
       "Never miss a call. Never lose a patient. Miss Floss runs your front desk 24/7.",
     images: ["https://missfloss.ai/og-image.png"],
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   robots: { index: true, follow: true },
 };
 
