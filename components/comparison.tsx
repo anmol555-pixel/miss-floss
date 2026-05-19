@@ -115,7 +115,7 @@ export default function Comparison() {
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             Comparison
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-3">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-3">
             Why Clinics Choose Miss Floss
           </h2>
           <p className="text-xl md:text-2xl text-slate-500 max-w-xl mx-auto leading-relaxed">

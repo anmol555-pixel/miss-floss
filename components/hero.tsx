@@ -158,9 +158,9 @@ function AICallCard() {
           >
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs text-slate-400 font-medium uppercase tracking-wide">Missed Calls</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wide">Missed Calls</span>
             </div>
-            <span className="text-4xl font-bold text-teal-600 leading-none">0</span>
+            <span className="text-5xl font-bold text-teal-600 leading-none">0</span>
           </motion.div>
 
           {/* Wave footer */}
