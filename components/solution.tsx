@@ -103,7 +103,7 @@ export default function Solution() {
                   <div className="w-9 h-9 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-600">
                     {step.icon}
                   </div>
-                  <span className="text-2xl font-bold text-slate-200">
+                  <span className="text-2xl font-bold text-teal-200">
                     {step.number}
                   </span>
                 </div>
