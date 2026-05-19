@@ -27,7 +27,7 @@ function CountUp({
 }) {
   const containerRef = useRef<HTMLSpanElement>(null);
   const numberRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(containerRef, { once: true, amount: 0.5 });
+  const inView = useInView(containerRef, { once: true, amount: 0.1 });
   const [done, setDone] = useState(false);
   const frameRef = useRef<number>(0);
 
@@ -81,7 +81,7 @@ function CountUp({
     <span ref={containerRef} className="inline-flex items-end justify-center">
       <span
         ref={numberRef}
-        className="bg-gradient-to-br from-teal-600 to-teal-500 bg-clip-text text-transparent inline-block"
+        className="bg-gradient-to-br from-teal-500 to-teal-400 bg-clip-text text-transparent inline-block"
         style={{ transformOrigin: "center", transform: "scale(0.8)" }}
       >
         {prefix}0{suffix}
@@ -182,10 +182,14 @@ export default function Benefits() {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
-          {stats.map((s) => (
+          {stats.map((s, i) => (
             <div
               key={s.label}
-              className="rounded-2xl border border-slate-200 bg-white shadow-sm p-7 text-center hover:shadow-md hover:border-teal-200 transition-all duration-300"
+              className={`rounded-2xl border bg-white shadow-sm p-7 text-center hover:shadow-md transition-all duration-300 ${
+                i === 0
+                  ? "border-teal-400 hover:border-teal-400"
+                  : "border-slate-200 hover:border-teal-200"
+              }`}
             >
               <p className="text-5xl font-bold mb-2">
                 <CountUp
@@ -193,7 +197,7 @@ export default function Benefits() {
                   prefix={s.prefix}
                   suffix={s.suffix}
                   decimals={s.decimals}
-                  duration={2500}
+                  duration={1800}
                 />
               </p>
               <p className="text-base font-semibold text-slate-800 mb-3">{s.label}</p>
