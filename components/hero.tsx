@@ -18,7 +18,6 @@ function VoiceWave() {
             duration: 1.5,
             repeat: Infinity,
             delay: (i * 1.5) / bars,
-            ease: "easeInOut",
           }}
           style={{ height: "100%", transformOrigin: "center" }}
         />
@@ -47,12 +46,12 @@ function AICallCard() {
     <motion.div
       initial={{ opacity: 0, y: 40, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.3, delay: 0.3 }}
       className="relative w-full max-w-full sm:max-w-[360px] mx-auto overflow-hidden lg:overflow-visible"
     >
       <motion.div
         animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.0 }}
+        transition={{ duration: 4, repeat: Infinity, delay: 1.0 }}
         className="relative"
       >
         {/* Card glow */}

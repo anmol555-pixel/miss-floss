@@ -87,7 +87,7 @@ function FAQItem({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
             <p className="text-base text-slate-500 leading-relaxed pb-5 max-w-2xl">

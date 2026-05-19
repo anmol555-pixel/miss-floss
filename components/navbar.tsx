@@ -25,7 +25,7 @@ export default function Navbar() {
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled ? "bg-white/90" : "bg-transparent"
         }`}
@@ -45,7 +45,7 @@ export default function Navbar() {
 
           <motion.nav
             animate={{ opacity: scrolled ? 0 : 1 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={{ duration: 0.25 }}
             className={`hidden md:flex items-center gap-8 ${scrolled ? "pointer-events-none" : ""}`}
           >
             {navLinks.map((link) => (
