@@ -103,8 +103,8 @@ function Legend() {
 
 export default function Comparison() {
   return (
-    <section className="relative bg-[#f8fafc] min-h-screen flex flex-col justify-center py-10 px-4 sm:px-6">
-      <div className="max-w-5xl mx-auto w-full">
+    <section className="relative bg-[#f8fafc] min-h-screen flex flex-col justify-center py-10 px-4 sm:px-6 overflow-hidden">
+      <div className="max-w-5xl mx-auto w-full overflow-hidden">
         <motion.div
           initial="hidden"
           whileInView="visible"
