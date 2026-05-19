@@ -39,29 +39,18 @@ function HeroCountUp({
   return <span ref={spanRef} className={className} style={style}>0</span>;
 }
 
-function ConnectedTimer({
-  targetSeconds = 47,
-  startDelay = 0,
-}: {
-  targetSeconds?: number;
-  startDelay?: number;
-}) {
+function ConnectedTimer({ startDelay = 0 }: { startDelay?: number }) {
   const [secs, setSecs] = useState(0);
   useEffect(() => {
     let iv: ReturnType<typeof setInterval> | null = null;
     const delay = setTimeout(() => {
-      let current = 0;
-      iv = setInterval(() => {
-        current++;
-        setSecs(current);
-        if (current >= targetSeconds) clearInterval(iv!);
-      }, 30);
+      iv = setInterval(() => setSecs((s) => s + 1), 1000);
     }, startDelay);
     return () => {
       clearTimeout(delay);
       if (iv) clearInterval(iv);
     };
-  }, [targetSeconds, startDelay]);
+  }, [startDelay]);
   const m = Math.floor(secs / 60);
   const s = secs % 60;
   return <span>(416) 555-0192 · Connected {m}:{String(s).padStart(2, "0")}</span>;
