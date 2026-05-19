@@ -110,10 +110,10 @@ export default function FAQ() {
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             FAQ
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-3">
             Got Questions? We Have Answers.
           </h2>
-          <p className="text-xl text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-500 max-w-xl mx-auto leading-relaxed">
             We know switching to AI feels like a big step. Here&apos;s everything
             you need to know before you do.
           </p>

@@ -118,7 +118,7 @@ export default function Comparison() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-3">
             Why Clinics Choose Miss Floss
           </h2>
-          <p className="text-lg sm:text-xl text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-500 max-w-xl mx-auto leading-relaxed">
             Other options cover some of the problem. Miss Floss solves all of it.
           </p>
         </motion.div>

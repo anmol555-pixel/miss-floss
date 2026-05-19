@@ -3,9 +3,12 @@
 import { motion, type Variants } from "framer-motion";
 
 function VoiceWave() {
-  const bars = 20;
+  const bars = 28;
   return (
-    <div className="flex items-center justify-center gap-[2.5px] h-7">
+    <div
+      className="flex items-center justify-center gap-[2.5px] h-10"
+      style={{ filter: "drop-shadow(0 0 6px rgba(13,148,136,0.45))" }}
+    >
       {Array.from({ length: bars }).map((_, i) => (
         <motion.div
           key={i}
@@ -48,8 +51,8 @@ function AICallCard() {
       className="relative w-full max-w-full sm:max-w-[360px] mx-auto overflow-hidden lg:overflow-visible"
     >
       <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.0 }}
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.0 }}
         className="relative"
       >
         {/* Card glow */}
@@ -128,13 +131,13 @@ function AICallCard() {
               animate={{ opacity: 1 }}
               transition={{ delay: 4.2 }}
             >
-              <span className="inline-flex items-center gap-1.5 text-[10px] text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200">
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-teal-600 px-4 py-2 rounded-full shadow-[0_2px_10px_rgba(13,148,136,0.4)]">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
-                  className="w-3 h-3"
+                  className="w-3.5 h-3.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -160,20 +163,20 @@ function AICallCard() {
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.9, duration: 0.3 }}
-          className="hidden lg:block absolute -right-4 top-10 bg-white border border-slate-200 rounded-xl px-3 py-2 shadow-lg shadow-slate-200/60"
+          className="hidden lg:block absolute -right-4 top-10 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-lg shadow-slate-200/60"
         >
           <p className="text-[9px] text-slate-400 uppercase tracking-wide">Calls answered today</p>
-          <p className="text-xl font-bold text-teal-600 leading-none mt-0.5">147</p>
+          <p className="text-4xl font-bold text-teal-600 leading-none mt-1">147</p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2, duration: 0.3 }}
-          className="hidden lg:block absolute -left-4 bottom-14 bg-white border border-slate-200 rounded-xl px-3 py-2 shadow-lg shadow-slate-200/60"
+          className="hidden lg:block absolute -left-4 bottom-14 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-lg shadow-slate-200/60"
         >
           <p className="text-[9px] text-slate-400 uppercase tracking-wide">Missed calls</p>
-          <p className="text-xl font-bold text-slate-900 leading-none mt-0.5">0</p>
+          <p className="text-4xl font-bold text-slate-900 leading-none mt-1">0</p>
         </motion.div>
       </motion.div>
     </motion.div>

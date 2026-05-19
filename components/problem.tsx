@@ -70,10 +70,10 @@ export default function Problem() {
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             The Problem
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-3 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-3 tracking-tight">
             Your Front Desk Is Costing You More Than You Think
           </h2>
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
             While your staff juggles patients, phones, and paperwork — new patients
             are calling your competitors.
           </p>

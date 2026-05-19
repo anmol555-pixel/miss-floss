@@ -70,13 +70,13 @@ export default function Testimonials() {
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             Testimonials
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-3">
             Dental Clinics{" "}
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
               Love Miss Floss.
             </span>
           </h2>
-          <p className="text-xl text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-500 max-w-xl mx-auto leading-relaxed">
             Dental practice owners share what changed after switching to Miss Floss.
           </p>
         </motion.div>

@@ -37,7 +37,7 @@ export default function CTA() {
               Answering Every Call.
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-slate-500 leading-relaxed mb-10 max-w-2xl mx-auto">
             Join dental clinics across Canada who never miss a patient again. Book
             your free 30-minute demo today — no commitment required.
           </p>

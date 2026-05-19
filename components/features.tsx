@@ -100,11 +100,11 @@ export default function Features() {
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             Features
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-3">
             Everything Your Front Desk Does.{" "}
             <span className="text-slate-400">Automated.</span>
           </h2>
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Miss Floss handles the entire patient communication workflow — without
             attitude, without sick days, without overtime.
           </p>
@@ -121,7 +121,8 @@ export default function Features() {
             <motion.div
               key={f.title}
               variants={fadeUp}
-              className="group relative rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-teal-200 p-6 overflow-hidden transition-all duration-300 cursor-default"
+              whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+              className="group relative rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg hover:border-teal-200 p-6 overflow-hidden transition-[box-shadow,border-color] duration-300 cursor-default"
             >
               <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-600 mb-5 group-hover:bg-teal-100 group-hover:border-teal-200 transition-colors duration-300">
                 {f.icon}
