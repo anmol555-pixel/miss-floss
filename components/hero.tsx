@@ -7,12 +7,12 @@ function VoiceWave() {
   return (
     <div
       className="flex items-center justify-center gap-[2.5px] h-10"
-      style={{ filter: "drop-shadow(0 0 6px rgba(13,148,136,0.45))" }}
+      style={{ filter: "drop-shadow(0 0 10px rgba(13,148,136,0.65))" }}
     >
       {Array.from({ length: bars }).map((_, i) => (
         <motion.div
           key={i}
-          className="w-[2px] rounded-full bg-teal-500"
+          className="w-[2px] rounded-full bg-teal-600"
           animate={{ scaleY: [0.15, 1, 0.25, 0.75, 0.15] }}
           transition={{
             duration: 1.5,
@@ -104,7 +104,7 @@ function AICallCard() {
           </div>
 
           {/* Messages */}
-          <div className="p-4 space-y-3 min-h-[200px] bg-white">
+          <div className="p-4 space-y-3 bg-white">
             {messages.map((msg, i) => (
               <motion.div
                 key={i}
@@ -149,6 +149,20 @@ function AICallCard() {
             </motion.div>
           </div>
 
+          {/* Missed calls stat */}
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 4.6, duration: 0.3 }}
+            className="mx-4 mb-3 rounded-xl bg-slate-50 border border-slate-100 px-4 py-3 flex items-center justify-between"
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs text-slate-400 font-medium uppercase tracking-wide">Missed Calls</span>
+            </div>
+            <span className="text-4xl font-bold text-teal-600 leading-none">0</span>
+          </motion.div>
+
           {/* Wave footer */}
           <div className="px-4 pb-4 bg-white">
             <div className="rounded-xl bg-slate-50 border border-slate-100 px-4 py-3">
@@ -168,15 +182,6 @@ function AICallCard() {
           <p className="text-4xl font-bold text-teal-600 leading-none mt-1">147</p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.2, duration: 0.3 }}
-          className="hidden lg:block absolute -left-4 bottom-14 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-lg shadow-slate-200/60"
-        >
-          <p className="text-[9px] text-slate-400 uppercase tracking-wide">Missed calls</p>
-          <p className="text-4xl font-bold text-slate-900 leading-none mt-1">0</p>
-        </motion.div>
       </motion.div>
     </motion.div>
   );
