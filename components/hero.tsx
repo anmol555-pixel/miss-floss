@@ -40,7 +40,7 @@ function HeroCountUp({
 }
 
 function ConnectedTimer({ startDelay = 0 }: { startDelay?: number }) {
-  const [secs, setSecs] = useState(23);
+  const [secs, setSecs] = useState(323);
   useEffect(() => {
     let iv: ReturnType<typeof setInterval> | null = null;
     const delay = setTimeout(() => {
