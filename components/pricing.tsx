@@ -23,11 +23,10 @@ function Check() {
 
 const plans = [
   {
-    name: "Starter",
+    name: "Core",
     price: "$297",
-    perDay: "~$10/day",
     period: "CAD/mo",
-    subtitle: "Perfect for single-location clinics",
+    subtitle: "For clinics testing the waters with AI",
     popular: false,
     features: [
       "Unlimited inbound calls",
@@ -40,14 +39,13 @@ const plans = [
     ctaHref: "https://cal.com/anmol-anand-f7s3pe",
   },
   {
-    name: "Growth",
+    name: "Pro",
     price: "$497",
-    perDay: "~$17/day",
     period: "CAD/mo",
-    subtitle: "For busy clinics that can't miss a call",
+    subtitle: "For single-location clinics serious about growth",
     popular: true,
     features: [
-      "Everything in Starter",
+      "Everything in Core",
       "Priority onboarding (live in 48h)",
       "Dedicated account manager",
       "Custom voice & greeting",
@@ -58,21 +56,20 @@ const plans = [
     ctaHref: "https://cal.com/anmol-anand-f7s3pe",
   },
   {
-    name: "Multi-Location",
-    price: "Custom",
-    perDay: "",
-    period: "",
+    name: "Max",
+    price: "$997",
+    period: "CAD/mo",
     subtitle: "For dental groups & DSOs",
     popular: false,
     features: [
-      "Everything in Growth",
+      "Everything in Pro",
       "Multiple locations",
       "Centralized dashboard",
       "Volume pricing",
       "Enterprise SLA",
       "Dedicated success manager",
     ],
-    cta: "Contact Us",
+    cta: "Book a Demo",
     ctaHref: "https://cal.com/anmol-anand-f7s3pe",
   },
 ];
@@ -156,9 +153,6 @@ export default function Pricing() {
                     <span className="text-sm text-slate-400 mb-1.5">{plan.period}</span>
                   )}
                 </div>
-                {plan.perDay && (
-                  <p className="text-xs font-medium text-teal-600 mb-1">{plan.perDay} — less than the value of one patient walking away</p>
-                )}
                 <p className="text-sm text-slate-500">{plan.subtitle}</p>
               </div>
 
