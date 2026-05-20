@@ -25,6 +25,7 @@ const plans = [
   {
     name: "Starter",
     price: "$297",
+    perDay: "~$10/day",
     period: "CAD/mo",
     subtitle: "Perfect for single-location clinics",
     popular: false,
@@ -41,6 +42,7 @@ const plans = [
   {
     name: "Growth",
     price: "$497",
+    perDay: "~$17/day",
     period: "CAD/mo",
     subtitle: "For busy clinics that can't miss a call",
     popular: true,
@@ -58,6 +60,7 @@ const plans = [
   {
     name: "Multi-Location",
     price: "Custom",
+    perDay: "",
     period: "",
     subtitle: "For dental groups & DSOs",
     popular: false,
@@ -78,12 +81,14 @@ export default function Pricing() {
   return (
     <section id="pricing" className="relative bg-[#f8fafc] min-h-screen flex flex-col justify-center py-16 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-5xl mx-auto w-full">
+
+        {/* Heading */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           variants={fadeUp}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           <p className="text-xs font-semibold tracking-widest text-teal-600 uppercase mb-4">
             Pricing
@@ -99,12 +104,31 @@ export default function Pricing() {
           </p>
         </motion.div>
 
+        {/* Price anchor banner */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="mb-10 rounded-2xl bg-teal-50 border border-teal-200 px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center"
+        >
+          <span className="text-sm text-slate-500">
+            A full-time dental receptionist costs{" "}
+            <span className="font-semibold text-slate-700 line-through">$3,500–$4,500/mo</span>
+          </span>
+          <span className="hidden sm:block w-px h-4 bg-teal-200" />
+          <span className="text-sm font-bold text-teal-700">
+            Miss Floss starts at $297/mo — and never calls in sick.
+          </span>
+        </motion.div>
+
+        {/* Cards */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={stagger}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"
         >
           {plans.map((plan) => (
             <motion.div
@@ -118,7 +142,7 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold text-white bg-teal-600 shadow-sm">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold text-white bg-teal-600 shadow-sm whitespace-nowrap">
                     Most Popular
                   </span>
                 </div>
@@ -126,16 +150,19 @@ export default function Pricing() {
 
               <div className="mb-6">
                 <p className="text-sm font-semibold text-slate-500 mb-1">{plan.name}</p>
-                <div className="flex items-end gap-1.5 mb-1">
+                <div className="flex items-end gap-1.5 mb-0.5">
                   <span className="text-4xl font-black text-slate-900">{plan.price}</span>
                   {plan.period && (
                     <span className="text-sm text-slate-400 mb-1.5">{plan.period}</span>
                   )}
                 </div>
+                {plan.perDay && (
+                  <p className="text-xs font-medium text-teal-600 mb-1">{plan.perDay} — less than a coffee</p>
+                )}
                 <p className="text-sm text-slate-500">{plan.subtitle}</p>
               </div>
 
-              <ul className="space-y-3 mb-8 flex-1">
+              <ul className="space-y-3 mb-6 flex-1">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-center gap-2.5 text-sm text-slate-600">
                     <Check />
@@ -143,6 +170,11 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
+
+              {/* Cancel anytime */}
+              <p className="text-xs text-slate-400 text-center mb-4">
+                Cancel anytime · No contracts · No setup fees
+              </p>
 
               <a
                 href={plan.ctaHref}
@@ -160,15 +192,58 @@ export default function Pricing() {
           ))}
         </motion.div>
 
-        <motion.p
+        {/* Guarantee + founding member strip */}
+        <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={fadeUp}
-          className="text-center text-sm text-slate-400"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={stagger}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
         >
-          All plans include a 14-day free trial. No credit card required.
-        </motion.p>
+          {/* 30-day guarantee */}
+          <motion.div variants={fadeUp} className="flex items-center gap-2.5">
+            <span className="w-8 h-8 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-teal-600">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-slate-700">30-Day Money-Back Guarantee</p>
+              <p className="text-xs text-slate-400">Not satisfied? Full refund. No questions asked.</p>
+            </div>
+          </motion.div>
+
+          <span className="hidden sm:block w-px h-10 bg-slate-200" />
+
+          {/* Founding member lock-in */}
+          <motion.div variants={fadeUp} className="flex items-center gap-2.5">
+            <span className="w-8 h-8 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-teal-600">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-slate-700">Founding Member Pricing</p>
+              <p className="text-xs text-slate-400">Lock in today's rate forever — price increases as we grow.</p>
+            </div>
+          </motion.div>
+
+          <span className="hidden sm:block w-px h-10 bg-slate-200" />
+
+          {/* Free trial */}
+          <motion.div variants={fadeUp} className="flex items-center gap-2.5">
+            <span className="w-8 h-8 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-teal-600">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-slate-700">14-Day Free Trial</p>
+              <p className="text-xs text-slate-400">No credit card required to get started.</p>
+            </div>
+          </motion.div>
+        </motion.div>
+
       </div>
     </section>
   );
