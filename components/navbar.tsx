@@ -27,7 +27,9 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-white/90" : "bg-transparent"
+          scrolled
+            ? "bg-white/75 backdrop-blur-md border-b border-slate-200/60 shadow-sm"
+            : "bg-transparent"
         }`}
       >
         <div className={`max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
@@ -43,21 +45,17 @@ export default function Navbar() {
             />
           </a>
 
-          <motion.nav
-            animate={{ opacity: scrolled ? 0 : 1 }}
-            transition={{ duration: 0.25 }}
-            className={`hidden md:flex items-center gap-8 ${scrolled ? "pointer-events-none" : ""}`}
-          >
+          <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-sm transition-colors duration-200 hover:text-slate-900 ${scrolled ? "text-slate-700" : "text-slate-900"}`}
+                className="text-sm text-slate-700 hover:text-teal-600 transition-colors duration-200"
               >
                 {link.label}
               </a>
             ))}
-          </motion.nav>
+          </nav>
 
           <div className="flex items-center gap-3">
             <a
@@ -73,25 +71,11 @@ export default function Navbar() {
               className="md:hidden p-2 text-slate-500 hover:text-slate-900 transition-colors"
               aria-label="Toggle navigation menu"
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="w-5 h-5"
-              >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
                 {mobileOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -106,7 +90,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className={`fixed ${scrolled ? "top-16" : "top-20"} left-0 right-0 z-40 bg-white/98 backdrop-blur-md border-b border-slate-200 shadow-sm p-6 md:hidden`}
+            className={`fixed ${scrolled ? "top-16" : "top-20"} left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm p-6 md:hidden`}
           >
             <nav className="flex flex-col gap-5">
               {navLinks.map((link) => (
@@ -114,7 +98,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-base text-slate-700 hover:text-slate-900 transition-colors"
+                  className="text-base text-slate-700 hover:text-teal-600 transition-colors"
                 >
                   {link.label}
                 </a>
