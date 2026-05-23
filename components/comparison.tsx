@@ -123,54 +123,48 @@ export default function Comparison() {
           </p>
         </motion.div>
 
-        {/* ── Mobile card layout (< md) ── */}
+        {/* ── Mobile scrollable table (< md) ── */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          variants={stagger}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden"
+          variants={fadeUp}
+          className="md:hidden rounded-2xl border border-slate-200 shadow-sm bg-white overflow-hidden"
         >
-          {/* Miss Floss card */}
-          <motion.div
-            variants={fadeUp}
-            className="rounded-2xl border-2 border-teal-500 bg-white shadow-sm p-5 sm:col-span-2"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-sm font-bold text-teal-700 uppercase tracking-wide">Miss Floss</span>
-              <span className="text-xs text-teal-600 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-full">
-                AI Receptionist
-              </span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
-              {features.map((feat) => (
-                <div key={feat} className="flex items-center justify-between py-2 border-b border-teal-50 last:border-0">
-                  <span className="text-sm text-slate-700">{feat}</span>
-                  <Cell value={true} />
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Competitor cards */}
-          {competitors.map((c) => (
-            <motion.div
-              key={c.name}
-              variants={fadeUp}
-              className="rounded-2xl border border-slate-200 bg-white shadow-sm p-5"
-            >
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-slate-800">{c.name}</p>
-                <p className="text-xs text-slate-400 mt-0.5">{c.note}</p>
-              </div>
-              {features.map((feat, i) => (
-                <div key={feat} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0">
-                  <span className="text-sm text-slate-600 pr-3">{feat}</span>
-                  <Cell value={c.values[i]} />
-                </div>
-              ))}
-            </motion.div>
-          ))}
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[480px]">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50">
+                  <th className="text-left p-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    Feature
+                  </th>
+                  <th className="p-3 bg-teal-50 border-x border-teal-100 text-center">
+                    <span className="text-[10px] font-bold text-teal-700 uppercase tracking-wide">Miss Floss</span>
+                  </th>
+                  {competitors.map((c) => (
+                    <th key={c.name} className="p-3 text-center">
+                      <span className="text-[10px] font-semibold text-slate-500 leading-tight block">{c.name}</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {features.map((feat, i) => (
+                  <tr key={feat} className={`border-b border-slate-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-slate-50/30"}`}>
+                    <td className="px-3 py-2.5 text-xs text-slate-700">{feat}</td>
+                    <td className="px-3 py-2.5 text-center bg-teal-50/60 border-x border-teal-100">
+                      <div className="flex justify-center"><Cell value={missFlossValues[i]} /></div>
+                    </td>
+                    {competitors.map((c) => (
+                      <td key={c.name} className="px-3 py-2.5 text-center">
+                        <div className="flex justify-center"><Cell value={c.values[i]} /></div>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </motion.div>
 
         {/* ── Desktop table layout (md+) ── */}
