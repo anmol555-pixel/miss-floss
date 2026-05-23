@@ -343,7 +343,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-medium px-3.5 py-1.5 rounded-full mb-7"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
-              AI-Powered Dental Reception · Canada
+              AI Powered Dental Receptionist · Canada
             </motion.div>
 
             <motion.h1

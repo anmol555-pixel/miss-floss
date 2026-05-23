@@ -129,7 +129,7 @@ export default function Problem() {
                   colorClass={p.colorClass}
                 />
               </p>
-              <p className="text-sm text-slate-500 leading-snug">{p.label}</p>
+              <p className="text-base text-slate-500 leading-snug">{p.label}</p>
             </motion.div>
           ))}
         </motion.div>
