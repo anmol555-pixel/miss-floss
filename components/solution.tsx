@@ -126,7 +126,7 @@ export default function Solution() {
           className="text-center"
         >
           <a
-            href="https://cal.com/anmol-anand-f7s3pe"
+            href="https://cal.com/missfloss/demo"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-base font-semibold text-teal-600 hover:text-teal-700 transition-colors border border-teal-200 hover:border-teal-300 px-6 py-3 rounded-full hover:bg-teal-50"

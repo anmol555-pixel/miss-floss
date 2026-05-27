@@ -53,7 +53,7 @@ export default function FloatingButtons() {
         {showBookDemo && (
           <motion.a
             key="book-demo"
-            href="https://cal.com/anmol-anand-f7s3pe"
+            href="https://cal.com/missfloss/demo"
             target="_blank"
             rel="noopener noreferrer"
             role="button"

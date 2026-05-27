@@ -36,7 +36,7 @@ const plans = [
       "Email support",
     ],
     cta: "Book a Demo",
-    ctaHref: "https://cal.com/anmol-anand-f7s3pe",
+    ctaHref: "https://cal.com/missfloss/demo",
   },
   {
     name: "Pro",
@@ -53,7 +53,7 @@ const plans = [
       "Phone & email support",
     ],
     cta: "Book a Demo",
-    ctaHref: "https://cal.com/anmol-anand-f7s3pe",
+    ctaHref: "https://cal.com/missfloss/demo",
   },
   {
     name: "Max",
@@ -70,7 +70,7 @@ const plans = [
       "Dedicated success manager",
     ],
     cta: "Book a Demo",
-    ctaHref: "https://cal.com/anmol-anand-f7s3pe",
+    ctaHref: "https://cal.com/missfloss/demo",
   },
 ];
 

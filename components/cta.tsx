@@ -44,7 +44,7 @@ export default function CTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <motion.a
-              href="https://cal.com/anmol-anand-f7s3pe"
+              href="https://cal.com/missfloss/demo"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}

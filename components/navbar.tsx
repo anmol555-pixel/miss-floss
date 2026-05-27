@@ -59,7 +59,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://cal.com/anmol-anand-f7s3pe"
+              href="https://cal.com/missfloss/demo"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-teal-600 rounded-full hover:bg-teal-700 transition-all duration-200 shadow-[0_2px_12px_rgba(13,148,136,0.3)] hover:shadow-[0_4px_20px_rgba(13,148,136,0.45)]"
@@ -104,7 +104,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="https://cal.com/anmol-anand-f7s3pe"
+                href="https://cal.com/missfloss/demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
